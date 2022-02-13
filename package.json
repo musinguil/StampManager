@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "electron": "^17.0.0"
+  },
+  "name": "stampmanager",
+  "description": "Application to manage your collection of stamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musinguil/StampManager.git"
+  },
+  "keywords": [
+    "stamp"
+  ],
+  "author": "Musin Guillaume",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/musinguil/StampManager/issues"
+  },
+  "homepage": "https://github.com/musinguil/StampManager#readme"
+}
