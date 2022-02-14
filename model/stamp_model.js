@@ -144,4 +144,5 @@ class Stamp{
         }
     }
 }
+
 module.exports.Stamp = Stamp;

@@ -1,8 +1,11 @@
+const { Stamp } = require('./stamp_model.js');
+const { Database } = require('./database_model.js');
+
 class StampList{
     current_date = new Date();
-    Stamp = require('./stamp_model.js');
     stamp = new this.Stamp(0, 0, this.current_date.getFullYear(), '', '', '', 0, []);
     stamplist = [];
+    database = new this.Database();
     getStamplist(){
         return this.stamplist;
     }
