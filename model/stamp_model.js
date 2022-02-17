@@ -7,7 +7,7 @@ class Stamp{
     place = '';
     price = '';
     characteristics = [];
-    __constructor(id, ref, year, color, person_name, place, price, characteristics){
+    constructor(id, ref, year, color, person_name, place, price, characteristics){
         if(this.isPositive(id) &&
         this.isPositive(ref) &&
         this.validYear(year) &&

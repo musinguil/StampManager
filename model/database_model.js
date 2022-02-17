@@ -2,8 +2,8 @@ const { result } = require('lodash');
 const { SQLite } = require('sqlite3');
 
 class Database{
-    __constructor(){
-        db_path = 'database.db'
+    constructor(){
+        db_path = 'database.db';
     }
     getStampList(){
         database = new this.SQLite.Database(this.db_path);
