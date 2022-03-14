@@ -1,11 +1,11 @@
-const { result } = require('lodash');
-const { SQLite } = require('sqlite3');
 
-class Database{
-    constructor(){
-        db_path = 'database.db';
-    }
-    getStampList(){
+const DatabaseModel = {
+    result : require('lodash'),
+    SQLite : require('sqlite3'),
+
+    db_path : 'database.db',
+
+    get getStampList(){
         database = new this.SQLite.Database(this.db_path);
         query = 'SELECT * FROM Main';
         result = [];
@@ -24,8 +24,8 @@ class Database{
 
         database.close();
         return result;
-    }
-    insertStamp(ref, year, color, person_name, place, price){
+    },
+    insertStamp : function(ref, year, color, person_name, place, price){
         query = 'INSERT INTO Main(ref, year, color, person_name, place, price) VALUES (' + 
         ref +
         year +
@@ -42,8 +42,8 @@ class Database{
             console.log('The stamp with the reference ' + ref + ' was inserted to the database');
         });
         database.close();
-    }
-    modifyStamp(id, ref, year, color, person_name, place, price){
+    },
+    modifyStamp : function(id, ref, year, color, person_name, place, price){
         query = `UPDATE Main
         SET year = ` + year +
         `, color = ` + color +
@@ -59,8 +59,8 @@ class Database{
             console.log('The stamp with the reference ' + ref + ' was inserted to the database');
         });
         database.close();
-    }
-    getCharacteristics(){
+    },
+    get getCharacteristics(){
         database = new this.SQLite.Database(this.db_path);
         query = 'SELECT * FROM Characteristics';
         result = [];
@@ -72,8 +72,8 @@ class Database{
         });
         database.close();
         return result;
-    }
-    getTags(){
+        },
+    get getTags(){
         database = new this.SQLite.Database(this.db_path);
         query = 'SELECT * FROM Tags';
         result = [];
@@ -88,4 +88,6 @@ class Database{
     }
 }
 
-module.exports.Database = Database;
+module.exports = {
+    DatabaseModel
+}

@@ -1,13 +1,16 @@
-class Stamp{
-    id = 0;
-    ref = 0;
-    year = 0;
-    color = '';
-    person_name = '';
-    place = '';
-    price = '';
-    characteristics = [];
-    constructor(id, ref, year, color, person_name, place, price, characteristics){
+
+/*var id = 0;
+var ref = 0;
+var year = 0;
+var color = '';
+var person_name = '';
+var place = '';
+var price = '';
+var characteristics = [];*/
+
+//constructor function
+const StampModel = {
+    constructor : function(id, ref, year, color, person_name, place, price, characteristics){
         if(this.isPositive(id) &&
         this.isPositive(ref) &&
         this.validYear(year) &&
@@ -29,13 +32,13 @@ class Stamp{
         else{
             console.log('Error : Impossibility to create the stamp due to invalid data.')
         }
-    }
+    },
     get getID(){
         return this.id;
-    }
+    },
     get getRef(){
         return this.ref;
-    }
+    },
     set setRef(ref){
         if(this.isPositive(ref)){
             this.ref = ref;
@@ -43,10 +46,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the reference.')
         }
-    }
+    },
     get getYear(){
         return this.year;
-    }
+    },
     set setYear(year){
         if(this.validYear(year)){
             return this.year;
@@ -54,10 +57,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the year.');
         }
-    }
+    },
     get getColor(){
         return this.color;
-    }
+    },
     set setColor(color){
         if(this.isString(color)){
             this.color = color;
@@ -65,10 +68,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the color.');
         }
-    }
+    },
     get getPersonName(){
         return this.person_name;
-    }
+    },
     set setPersonName(person_name){
         if(this.isString(person_name)){
             this.person_name = person_name;
@@ -76,10 +79,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the name of the personnality who figures in the stamp.');
         }
-    }
+    },
     get getPlace(){
         return this.place;
-    }
+    },
     set setPlace(place){
         if(this.isString(place)){
             this.place = place;
@@ -87,10 +90,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the place.')
         }
-    }
+    },
     get getPrice(){
         return this.price;
-    }
+    },
     set setPrice(price){
         if(this.isPositive(price)){
             this.price = price;
@@ -98,10 +101,10 @@ class Stamp{
         else{
             console.log('FAILED to modify the price.');
         }
-    }
+    },
     get getCharacteritics(){
         return this.characteristics;
-    }
+    },
     set setCharacteristics(characteristics){
         if(Array.isArray(characteristics)){
             this.characteristics = characteristics;
@@ -109,8 +112,8 @@ class Stamp{
         else{
             console.log('FAILED to modify the characteristics.');
         }
-    }
-    isPositive(integer){
+    },
+    isPositive : function(integer){
         if(integer > 0){
             return true;
         }
@@ -118,8 +121,8 @@ class Stamp{
             console.log('The integer ' + integer + ' is not positive.');
             return false;
         }
-    }
-    validYear(year){
+    },
+    validYear : function(year){
         current_date = new Date();
         if(year > 1800 && year < current_date.getFullYear()){
             return true;
@@ -133,8 +136,8 @@ class Stamp{
             }
             return false;
         }
-    }
-    isString(str){
+    },
+    isString : function(str){
         if(typeof(str) == 'string'){
             return true;
         }
@@ -144,5 +147,23 @@ class Stamp{
         }
     }
 }
-
-module.exports.Stamp = Stamp;
+module.exports = {
+    /*setStamp,
+    getID,
+    getRef,
+    getYear,
+    getColor,
+    getPersonName,
+    getPlace,
+    getPrice,
+    getCharacteristics,
+    setID,
+    setRef,
+    setYear,
+    setColor,
+    setPersonName,
+    setPlace,
+    setPrice,
+setCharacteristics*/
+    StampModel    
+};

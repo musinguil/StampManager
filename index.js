@@ -4,6 +4,7 @@ const url = require('url')
 
 const creatWindows = () => {
     const win = new BrowserWindow({
+        icon: 'view/img/icon/stamp.ico',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -11,11 +12,6 @@ const creatWindows = () => {
         }
     });
     win.loadFile('index.html');
-    /*win.loadURL(url.format({
-        pathname: path.join(__dirname + '/index.html'),
-        protocol: 'file:',
-        slashes:true
-    }));*/
     win.webContents.openDevTools();
     win.menuBarVisible = false;
 }

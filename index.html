@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <link rel="stylesheet" href="view/css/main.css">
+        <link rel="icon" href="view/img/icon/stamp.svg">
         <title>StampManager</title>
     </head>
     <body>
-        <p id="p">Hello World !</p>
-        <script>
-            require('./controller/main_controller.js');
+        <!--Hamburger Menu-->
+        <div id="hamburger_menu" onclick="closePannel()">
+            <img class="icon" alt="Leave Hamburger menu" onclick="closePannel()" src="./view/img/icon/cross_dark.svg" />
+            <div id="collection_link" class="pointable_item">Collection</div>
+            <div id="settings_link" class="pointable_item">Settings</div>
+        </div>
+
+        <!--Header-->
+        <header>
+            <img id="settings" alt="Setting logo" onclick="openPannel()" src="./view/img/icon/menu_dark.svg"/>
+            <div id="header_content"></div>
+        </header>
+
+        <!--Content of the page-->
+        <section id="content"></section>
+
+        <!--All script usefull for the program-->
+        <script src="./view/js/jquery-3.6.0.min.js"></script>
+        <script src="./view/js/animation.js"></script>
+        <script type="module">
+            // Import all view
+            window.$ = window.jQuery = require('./view/js/jquery-3.6.0.min.js');
+            import searchbar from './view/js/searchbar_view.js';
+            $('#header_content').append(searchbar.getSearchbar);
+
+            // Layout at startup
+            document.getElementById("clear_logo").setAttribute("style", "display:none;");
         </script>
-        <!--<script src="./controller/main_controller.js"></script>-->
     </body>
 </html>
