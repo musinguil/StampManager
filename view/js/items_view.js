@@ -1,0 +1,1 @@
+import searchbar from './view/js/searchbar_view';
