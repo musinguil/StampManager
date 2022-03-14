@@ -1,0 +1,8 @@
+{
+    "button": {
+        "settings": "./view/img/icon/settings.png",
+        "add": "./view/img/icon/add.png",
+        "modify": "./view/img/icon/modify.png",
+        "delete": "./view/img/icon/delete.png"
+    }
+}

@@ -1,0 +1,11 @@
+Color List By Shade
+#faf9fa
+#efedf0
+#e3dfe5
+#d6d1d9
+#c8c1cc
+#b9b0be
+#a79cae
+#92849a
+#776681
+#463c4c

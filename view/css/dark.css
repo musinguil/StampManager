@@ -1,0 +1,48 @@
+@font-face {
+    font-family: Gravity;
+    src: url("../font/Gravity.otf") format("opentype");
+}
+body{
+    margin: 0px;
+    padding: 8px;
+    font-family: Gravity;
+    background-color: #faf9fa;
+    color:#faf9fa;
+    height: 100vh;
+}
+header {
+    background-color: #faf9fa;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+}
+header > img {
+    width: 18px;
+    padding: 3px;
+    cursor: pointer;
+
+}
+#searchbar {
+    background-color: #73687a;
+    padding: 8px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#searchbar > img {
+    width: 18px;
+    padding: 3px;
+    cursor: pointer;
+}
+#searchbar > input {
+    width: calc(100% - 34px);
+    height: 24px;
+    background-color: #73687a;
+    color:#faf9fa;
+    outline: none;
+    border-style: none;
+}
+::placeholder{
+    color: #b9b0be;
+}
